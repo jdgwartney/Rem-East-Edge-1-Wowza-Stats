@@ -30,6 +30,13 @@
             "description" : "Password to use to authenticate",
             "type" : "password",
             "required": true
+        },
+        {
+            "title" : "Poll Interval",
+            "name" : "interval",
+            "description" : "How often to sample. defaults to 5000 milliseconds",
+            "type" : "string",
+            "required": "5000"
         }
  ]
 
