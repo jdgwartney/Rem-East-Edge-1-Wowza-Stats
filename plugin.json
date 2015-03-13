@@ -1,0 +1,5 @@
+{
+ "description" : "Provides Wowza Connection Stats",
+ "command" : "./wowzapoll.sh",
+ "metrics" : ["WOWZA_CONNECTIONS_ISTREAM"]
+}
