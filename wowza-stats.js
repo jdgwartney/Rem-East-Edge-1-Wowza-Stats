@@ -34,19 +34,16 @@ var Collector = {
       jsdom.env({
         html: body,
         scripts: [
-          // TODO:
-          // Does this end up making a network call for every time this code
-          // gets fired or does jsdom load it once and use it over and over?
           'http://code.jquery.com/jquery.min.js'
         ]
       }, function (err, window) {
         // User jQuery to Gather some stats from the connectioncounts HTTP
         // provider.
         var $ = window.jQuery;
-        Collector.stats['connections_current'] = parseInt($('ConnectionsCurrent').html());
-        Collector.stats['connections_total'] = parseInt($('ConnectionsTotal').html());
-        Collector.stats['bytes_in'] = parseFloat($('MessagesInBytesRate').html());
-        Collector.stats['bytes_out'] = parseFloat($('MessagesOutBytesRate').html());
+        Collector.stats['WOWZA_CONNECTIONS_CURRENT'] = parseInt($('ConnectionsCurrent').html());
+        Collector.stats['WOWZA_CONNECTIONS_TOTAL'] = parseInt($('ConnectionsTotal').html());
+        Collector.stats['WOWZA_CONNECTIONS_BYTES_IN'] = parseFloat($('MessagesInBytesRate').html());
+        Collector.stats['WOWZA_CONNECTIONS_BYTES_OUT'] = parseFloat($('MessagesOutBytesRate').html());
         callback(window);
       });
     });
@@ -59,11 +56,11 @@ var Collector = {
 var callDelay = function() {
   Collector.get_stats(argv.uri, function(response) {
     // Print out collected stats.
-    console.log(Collector.stats);
-    // Show the names of all streams being viewed.
-    //response.jQuery('ApplicationInstance Stream Name').each(function(index, value) {
-    //  console.log(response.jQuery(value).html().replace('%2F', '/'));
-    //});
+    //console.log(Collector.stats);
+    console.log('WOWZA_CONNECTIONS_CURRENT ' + Collector.stats.WOWZA_CONNECTIONS_CURRENT + ' Rem-East-v4-Edge-1');
+    console.log('WOWZA_CONNECTIONS_TOTAL ' + Collector.stats.WOWZA_CONNECTIONS_TOTAL + ' Rem-East-v4-Edge-1')
+    console.log('WOWZA_CONNECTIONS_BYTES_IN ' + Collector.stats.WOWZA_CONNECTIONS_BYTES_IN + ' Rem-East-v4-Edge-1')
+    console.log('WOWZA_CONNECTIONS_BYTES_OUT ' + Collector.stats.WOWZA_CONNECTIONS_BYTES_OUT + ' Rem-East-v4-Edge-1')
   });
 }
 
