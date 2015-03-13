@@ -1,0 +1,31 @@
+{
+	"name": "graphdat-httpcheck-plugin",
+	"version": "0.0.1",
+	"private": false,
+	"description": "HTTP Check plugin for Graphat to poll a URL and report back its response time",
+	"main": "index.js",
+	"devDependencies": {},
+	"dependencies": {
+		"async": "0.2.x",
+		"graphdat-plugin-tools" : "0.0.1",
+		"request" : "2.27.x",
+		"underscore": "1.5.x"
+	},
+	"repository": {
+	"type": "git",
+	"url": "https://github.com/graphdat/plugin-httpcheck"
+	},
+	"keywords": [
+		"graphdat",
+		"plugin",
+		"http",
+		"response",
+		"poll"
+	],
+	"author": "Graphdat <support@graphdat.com>",
+	"license": "Apache v2",
+	"bugs": {
+		"url": "https://github.com/graphdat/plugin-httpcheck/issues"
+	},
+	"engine": "node >= 0.8.1"
+}
