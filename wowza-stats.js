@@ -57,10 +57,10 @@ var callDelay = function() {
   Collector.get_stats(argv.uri, function(response) {
     // Print out collected stats.
     //console.log(Collector.stats);
-    console.log('WOWZA_CONNECTIONS_CURRENT ' + Collector.stats.WOWZA_CONNECTIONS_CURRENT + ' Rem-East-v4-Edge-1');
-    console.log('WOWZA_CONNECTIONS_TOTAL ' + Collector.stats.WOWZA_CONNECTIONS_TOTAL + ' Rem-East-v4-Edge-1')
-    console.log('WOWZA_CONNECTIONS_BYTES_IN ' + Collector.stats.WOWZA_CONNECTIONS_BYTES_IN + ' Rem-East-v4-Edge-1')
-    console.log('WOWZA_CONNECTIONS_BYTES_OUT ' + Collector.stats.WOWZA_CONNECTIONS_BYTES_OUT + ' Rem-East-v4-Edge-1')
+    console.log('WOWZA_CONNECTIONS_CURRENT ' + Collector.stats.WOWZA_CONNECTIONS_CURRENT + ' Rem-East-v4-Edge-1-WowzaStats');
+    console.log('WOWZA_CONNECTIONS_TOTAL ' + Collector.stats.WOWZA_CONNECTIONS_TOTAL + ' Rem-East-v4-Edge-1-WowzaStats')
+    console.log('WOWZA_CONNECTIONS_BYTES_IN ' + Collector.stats.WOWZA_CONNECTIONS_BYTES_IN + ' Rem-East-v4-Edge-1-WowzaStats')
+    console.log('WOWZA_CONNECTIONS_BYTES_OUT ' + Collector.stats.WOWZA_CONNECTIONS_BYTES_OUT + ' Rem-East-v4-Edge-1-WowzaStats')
   });
 }
 
