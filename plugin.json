@@ -1,6 +1,6 @@
 {
  "description" : "Provides Wowza Connection Stats",
- "command" : "./wowzapoll.sh",
+ "command" : "./wowzapoll.sh $(source) $(user) $(password)",
  "metrics" : ["WOWZA_CONNECTIONS_CURRENT", "WOWZA_CONNECTIONS_TOTAL", "WOWZA_CONNECTIONS_BYTES_IN", "WOWZA_CONNECTIONS_BYTES_OUT"],
 
  "postExtract" : "npm install",
@@ -10,7 +10,7 @@
  "paramSchema": [
         {
             "title": "Source",
-            "name": "string",
+            "name": "source",
             "description": "Source to use for this connection. Defaults to the local hostname",
             "type": "string",
             "default": "hello",
@@ -18,7 +18,7 @@
         },
         {
             "title": "User",
-            "name": "string",
+            "name": "user",
             "description": "User name to use to authenticate",
             "type": "string",
             "default": "joe",
