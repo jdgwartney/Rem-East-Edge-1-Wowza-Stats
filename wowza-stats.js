@@ -14,6 +14,39 @@ var request = require('request'),
     jsdom = require('jsdom'),
     argv = require('optimist').argv;
 
+// Load the plugin parameters file. When the plugin is configured a JSON file with the name "param.json" is written to the top-level directory in the plugin directory.
+// On Unix based systems the location of the plugins are /etc/boundary/plugins. Each plugin installed in a meter is a subdirectory in /etc/boundary/plugins.
+// So for example a plugin named "foo" will have a directory path of /etc/boundary/foo. This directory is where the param.json is written
+// An param.json file is shown here:
+// {
+//   "items":[
+//     {
+//       "source":"boundary-001",
+//       "user":"joe",
+//       "password":"secret",
+//       "interval":"5000"
+//     },
+//     {
+//       "source":"boundary-002",
+//       "user":"bob",
+//       "password":"i like peanutbutter",
+//       "interval":"10000"
+//     }
+//   ],
+//   "pollInterval":1000
+// }
+//
+// where "items" JSON array consist of two JSON objects with fields defined in the plugin.json
+// they can be access in this manner:
+//
+// _param.items[0].source
+//
+
+// NodeJS readily supports the parse and loading of a json into a useable Javascript object as shown in the next line
+var _param = require('./param.json');
+
+// The _param variable can now be used to JSON in object fashion as indicated above
+
 // Make sure that at least the --uri argument was passed.
 if (argv.uri.length == 0) {
   console.log('URI Required! Script should be called with one argument which is the URI of the connectioncounts HTTP provider to query.');

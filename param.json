@@ -1,0 +1,17 @@
+{
+  "items":[
+    {
+      "source":"boundary-001",
+      "user":"joe",
+      "password":"secret",
+      "interval":"5000"
+    },
+    {
+      "source":"boundary-002",
+      "user":"bob",
+      "password":"i like peanutbutter",
+      "interval":"10000"
+    }
+  ],
+  "pollInterval":1000
+}
